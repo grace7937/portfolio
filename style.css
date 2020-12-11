@@ -16,7 +16,7 @@
 
   /* Font size */
   --font-large: 48px;
-  --font-medium: 28px;
+  --font-medium: 21px;
   --font-small: 16px;
   --font-micro: 14px;
   --font-regular: 20px;
@@ -73,7 +73,7 @@ h1 {
 }
 
 h2 {
-  font-size: var(--font-regula);
+  font-size: var(--font-medium);
   font-weight: var(--weight-semi-bold);
   color: var(--color-black);
   margin: 8px 0;
@@ -400,6 +400,10 @@ P {
   margin: 40px;
 }
 
+.name:hover {
+  transform: scale(1.1);
+}
+
 .testimonial {
   display: flex;
   margin: 32px 0;
@@ -437,4 +441,35 @@ P {
 
 .testimonial__speech-bubble a {
   color: rgb(255, 175, 188);
+}
+
+/* Contact */
+
+#contact {
+  background-color: palevioletred;
+}
+
+.contact__title,
+.contact__email,
+.contact__rights {
+  color: var(--color-white);
+}
+
+.contact__rights {
+  font-size: var(--font-small);
+}
+
+.contact__title {
+  margin: 32px 0;
+}
+
+.contact__links {
+  font-size: var(--font-medium);
+  margin: 24px 0;
+}
+
+.contact__links i:hover {
+  transform: scale(1.1);
+  color: antiquewhite;
+  transition: all var(--animation-duration) ease-in;
 }
