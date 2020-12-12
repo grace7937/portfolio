@@ -95,12 +95,19 @@ P {
 
 /* Nabar */
 #navbar {
+  position: fixed;
+  width: 100%;
   display: flex;
   justify-content: space-between;
-  background-color: slateblue;
+  background-color: transparent;
   align-items: center;
   color: var(--color-white);
   padding: 10px;
+  transition: all var(--animation-duration) ease-in-out;
+}
+
+#navbar.navbar--dark {
+  background-color: slateblue;
 }
 
 .navbar__menu {
@@ -141,6 +148,7 @@ P {
 #home {
   background: url('imgs/background/BG_Img.png') center/cover no-repeat;
   padding: 40px;
+  padding-top: 120px;
   text-align: center;
 }
 
