@@ -45,3 +45,39 @@ const homeHeight = home.getBoundingClientRect().height;
 document.addEventListener('scroll', () => {
   home.style.opacity = 1 - window.scrollY / homeHeight;
 });
+
+// Show Arrow-up When you scrolling down
+const arrowUp = document.querySelector('.arrow-up');
+document.addEventListener('scroll', () => {
+  if (window.scrollY > homeHeight / 2) {
+    arrowUp.classList.add('visible');
+  } else {
+    arrowUp.classList.remove('visible');
+  }
+});
+
+// Handle click the 'arrow up'
+arrowUp.addEventListener('click', () => {
+  scrollIntoview('#home');
+});
+
+// Projects
+const workBtnContainer = document.querySelector('.work__categorise');
+const projectContainer = document.querySelector('.work__projects');
+const projects = document.querySelectorAll('.project');
+
+workBtnContainer.addEventListener('click', (e) => {
+  const filter = e.target.dataset.filter || e.target.parentNode.dataset.filter;
+  if (filter == null) {
+    return;
+  }
+
+  projects.forEach((project) => {
+    if (filter === '*' || filter === project.dataset.type) {
+      console.log(project.dataset.type);
+      project.classList.remove('invisible');
+    } else {
+      project.classList.add('invisible');
+    }
+  });
+});
