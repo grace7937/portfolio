@@ -11,6 +11,13 @@ document.addEventListener('scroll', () => {
   } else {
     navbar.classList.remove('navbar--dark');
   }
+  navbarMenu.classList.remove('open');
+});
+
+//Show up navmenu when you click toggle Btn
+const toggleBtn = document.querySelector('.navbar__toggle-btn');
+toggleBtn.addEventListener('click', () => {
+  navbarMenu.classList.toggle('open');
 });
 
 // Handdle scrolling when tapping on the navbar menu
@@ -23,6 +30,7 @@ navbarMenu.addEventListener('click', (event) => {
   if (link == null) {
     return;
   }
+
   scrollIntoview(link);
 });
 
